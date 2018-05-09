@@ -20,6 +20,27 @@ que la imagen del disco CPC de "La abadia del crimen" se lleva distribuyendo
 en varias webs durantes años sin problema alguno, VigasosoSDL se distribuye con 
 los archivos necesarios para jugar a "La abadia del crimen".
 
+Instalación:
+============
+
+**Prerequisitos**
+
+1. Crear carpetas de recursos
+
+mkdir VigasocoSDL/audio
+mkdir VigasocoSDL/video
+mkdir VigasocoSDL/input
+
+2. Instalar clang, libboost y sdl1.2
+
+sudo apt-get install clang libboost-all-dev libsdl1.2-dev
+
+**Compilación**
+
+Compilar con
+
+    CXX=clang LD=clang make
+
 Uso:
 ===
 
@@ -66,6 +87,15 @@ Triangulo: Cambiar entre graficos CPC y VGA
 Otras teclas (no disponibles en Windows) son:
 F2: Cambiar entre Graficos VGA o CPC
 F3: Cambiar entre modo de pantalla completa y ventana
+
+
+*Modo abadIA*
+
+Para lanzar VigasocoSDL en el modo compatible con el proyecto abadIA, ejecutar con
+
+	./VigasocoSDL abadia -audio:libVigasocoNULLAudioPlugin.so,NULLAudioPlugin -input:libVigasocoFakeInputPlugin.so,FakeInputPlugin -input:libVigasocoSDLInputPlugin.so,SDLInputPlugin
+
+estando en la subcarpeta VigasocoSDL/
 
 
 Contacto:
